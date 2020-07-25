@@ -11,7 +11,6 @@ Android Utilities Location has functions for fast prototyping and development of
 
 # Built Using
 
-* Java
 * Kotlin
 * Xml
 
@@ -35,6 +34,7 @@ allprojects {
 
 * AndroidX
 * Kotlin
+* Play Services
 
 # Licences
 
