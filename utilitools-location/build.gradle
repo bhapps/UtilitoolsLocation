@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion compile_build_tools_version
+
+    defaultConfig {
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode version_code
+        versionName version_name
+        vectorDrawables.useSupportLibrary useSupportLibrary
+        multiDexEnabled multiDexEnabled
+    }
+
+    dataBinding {
+        enabled = dataBindingEnabled
+    }
+
+    viewBinding {
+        enabled = viewBindingEnabled
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled minifyEnabled
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled coreLibraryDesugaringIsEnabled
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    //androidx
+    implementation "androidx.core:core-ktx:$core_version"
+
+    //google
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$coreLibraryDesugaring"
+
+    //google play
+    implementation "com.google.android.gms:play-services-maps:$play_services_maps"
+    implementation "com.google.android.gms:play-services-location:$play_services_location"
+
+}

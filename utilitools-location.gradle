@@ -1,0 +1,13 @@
+ext.utilitools_Location = [
+
+        libraryVersion    : '0.0.1',
+        libraryVersionCode: 1,
+        version           : '1.0',
+        group             : 'com.github.bhapps',
+
+        minSdk            : 22,
+        targetSdk         : 28,
+        compileSdk        : 28,
+        buildTools        : '28.0.2'
+
+]
